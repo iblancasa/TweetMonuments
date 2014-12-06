@@ -1,22 +1,50 @@
 html, body {
   height: 100%;
   margin: 0px;
-  padding: 0px
+  padding: 0px;
+  background:#EBECFF;
 }
 
 #map-canvas{
   float:left;
-  width:60%;
+  width:50%;
   height:100%;
+  position:fixed; left:0;
+  margin:0 auto;
 }
 
 #panel {
   float:right;
-  background-color: #cccccc;
-  width:40%
+  background-color: #EBECFF;
+  width:50%;
+  height:100%
 }
 
 #container{
   width:100%;
-  height:40%;
+}
+
+.monumento{
+  background:#EBECFF;
+}
+
+.tweet{
+  background: #ffffff;
+  border-radius:10px;
+  -moz-border-radius:10px; /* Firefox */
+  -webkit-border-radius:10px; /* Safari y Chrome */
+  padding:2%;
+  margin-right:2%;
+  margin-left:2%;
+  margin-top:1%;
+}
+
+.autor a{
+  font-weight: bold;
+  text-decoration:none;
+  color:#A69C8E;
+}
+
+.texto{
+  color:#6D929B;
 }

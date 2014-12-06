@@ -29,6 +29,7 @@ render = render_mako(
 
 html=""
 grafico=""
+ultimavez=datetime.datetime.now()
 
 def generarMonumento(busqueda,etiqueta):
     global html
@@ -46,9 +47,9 @@ def generarMonumento(busqueda,etiqueta):
     for tweet in tweets:
         penultimo=ultimo
         ultimo=tweet.created_at
-        if contador < 6:
-            html+="\t<article class=\"tweet\"> <span class=\"autor\">"+tweet.author.name+"</span>\n"
-            html+="\t\t<p class=\"texto\">"+tweet.text+"</p>\n\t</article>\n"
+        url="https://twitter.com/"+ tweet.author.screen_name+"/status/"+str(tweet.id)
+        html+="\t<article class=\"tweet\"> <span class=\"autor\"><a href=\""+url+"\">"+tweet.author.name+"</a></span>\n"
+        html+="\t\t<p class=\"texto\">"+tweet.text+"</p>\n\t</article>\n"
         contador+=1
 
     html+="</section>\n"
@@ -78,17 +79,19 @@ def recalcularTodo():
     grafico="  $(function () {\
         $('#container').highcharts({\
             chart: {\
-                type: 'bar'\
+                type: 'bar',\
+                height: 250, \
+                backgroundColor:'#EBECFF'\
             },\
             title: {\
-                text: 'Fruit Consumption'\
+                text: 'En Twitter se habla de...'\
             },\
             xAxis: {\
-                categories: ['Sitios turisticos']\
+                categories: ['Lugares turisticos']\
             },\
             yAxis: {\
                 title: {\
-                    text: 'Tweets por sitio'\
+                    text: 'Estimacion de la media de tweets en 10 min'\
                 }\
             },\
             series: [{\
@@ -114,17 +117,25 @@ def recalcularTodo():
         });\
         });"
 
-    
+
 
 
 class index:
     def GET(self, name):
         global html
         global grafico
-        recalcularTodo()
+        global ultimavez
+
+        if datetime.datetime.now()-ultimavez>datetime.timedelta(minutes=10):
+            recalcularTodo()
+            print "He recalculado"
+            ultimavez=datetime.datetime.now()
+        else:
+            print "Nada, todo esta calculado"
         return render.index(html=html,grafico=grafico)
 
 
 
 if __name__ == "__main__":
+    recalcularTodo()
     app.run()
