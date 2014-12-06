@@ -21,32 +21,14 @@
   <aside id="panel">
     ${html}
     <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-
+    <section id="aviso">
+        <p><a href="https://github.com/iblancasa/TweetMonuments">TweetMonuments</a> de <a href="https://github.com/iblancasa">Iblancasa</a> bajo licencia GPLv2</p>
+    </section>
   </aside>
 </body>
 <script type="text/javascript">
   google.maps.event.addDomListener(window, 'load', initialize);
   $(".monumento").hide();
 </script>
-<script>
-var fixmeTop = $('#map-canvas').offset().top;       // get initial position of the element
-
-$(window).scroll(function() {                  // assign scroll event listener
-
-  var currentScroll = $(window).scrollTop(); // get current position
-
-  if (currentScroll >= fixmeTop) {           // apply position: fixed if you
-    $('#map-canvas').css({                      // scroll to that element or below it
-      position: 'fixed',
-      top: '0',
-      left: '0'
-    });
-  } else {                                   // apply position: static
-    $('#map-canvas').css({                      // if you scroll above it
-      position: 'static'
-    });
-  }
-
-});
-</script>
+<script src="static/fix.js"></script>
 </html>

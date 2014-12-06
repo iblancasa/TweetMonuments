@@ -37,6 +37,9 @@ html, body {
   margin-right:2%;
   margin-left:2%;
   margin-top:1%;
+  border-width:5px;
+  border-style:outset;
+  border-color:#A25F08;
 }
 
 .autor a{
@@ -47,4 +50,18 @@ html, body {
 
 .texto{
   color:#6D929B;
+}
+
+#aviso{
+  margin: 0 auto;
+}
+
+#aviso p{
+  text-align:center;
+  color:#4444;
+}
+
+#aviso a{
+  text-decoration:none;
+  color:#444444;
 }
