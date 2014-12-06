@@ -5,15 +5,24 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
   <title>Rutas por monumentos</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
   <link type="text/css" rel="stylesheet" href="static/estilo.css" />
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="static/mapa.js"></script>
-  <script src="static/lateral.js"></script>
-
+  <script type="text/javascript" >
+    ${grafico}
+  </script>
 </head>
 <body>
-  <div id="map-canvas"></div>
-  <div id="panel"><p>${tweets}</p></div>
+  <section id="map-canvas"></section>
+  <aside id="panel">
+    <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+    ${html}
+  </aside>
 </body>
+<script type="text/javascript">
+  google.maps.event.addDomListener(window, 'load', initialize);
+  $(".monumento").hide();
+</script>
 </html>

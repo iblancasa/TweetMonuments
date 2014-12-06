@@ -22,8 +22,8 @@ function initialize() {
   });
 
   google.maps.event.addListener(giralda, 'click', function() {
-
-
+    $(".monumento").hide(500);
+    $("#giralda").show(500);
   });
 
   image = 'static/iconos/granada.png';
@@ -35,8 +35,8 @@ function initialize() {
   });
 
   google.maps.event.addListener(alhambra, 'click', function() {
-
-
+    $(".monumento").hide(500);
+    $("#alhambra").show(500);
   });
 
   image = 'static/iconos/cordoba.png';
@@ -48,8 +48,8 @@ function initialize() {
   });
 
   google.maps.event.addListener(mezquita, 'click', function() {
-
-
+    $(".monumento").hide(500);
+    $("#mezquitacordoba").show(500);
   });
 
   image = 'static/iconos/madrid.png';
@@ -61,9 +61,8 @@ function initialize() {
   });
 
   google.maps.event.addListener(puertaalcala, 'click', function() {
-
-
-
+    $(".monumento").hide(500);
+    $("#puertaalcala").show(500);
   });
 
   image = 'static/iconos/valencia.png';
@@ -75,8 +74,8 @@ function initialize() {
   });
 
   google.maps.event.addListener(museoartesyciencias, 'click', function() {
-
-
+    $(".monumento").hide(500);
+    $("#museoartesciencias").show(500);
   });
 
   image = 'static/iconos/barcelona.png';
@@ -88,9 +87,7 @@ function initialize() {
   });
 
   google.maps.event.addListener(sagradafamilia, 'click', function() {
-
-
+    $(".monumento").hide(500);
+    $("#sagradafamilia").show(500);
   });
 }
-
-  google.maps.event.addDomListener(window, 'load', initialize);
