@@ -73,7 +73,6 @@ def recalcularTodo():
     contadorGiralda=generarMonumento("giralda","giralda")
     contadorSagrada=generarMonumento("sagrada familia","sagradafamilia")
     contadorMezquita=generarMonumento("mezquita cordoba","mezquitacordoba")
-    contadorMuseoCiencias=generarMonumento("museo artes ciencias","museoartesciencias")
     contadorPuertaAlcala=generarMonumento("puerta alcala","puertaalcala")
 
     grafico="  $(function () {\
@@ -106,9 +105,6 @@ def recalcularTodo():
             },{\
                 name: 'Mezquita de Cordoba',\
                 data: ["+str(contadorMezquita)+"]\
-            },{\
-                name: 'Museo de las Artes y las Ciencias',\
-                data: ["+str(contadorMuseoCiencias)+"]\
             },{\
                 name: 'Puerta de Alcala',\
                 data: ["+str(contadorPuertaAlcala)+"]\

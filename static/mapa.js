@@ -65,18 +65,6 @@ function initialize() {
     $("#puertaalcala").show(500);
   });
 
-  image = 'static/iconos/valencia.png';
-  var valencia = new google.maps.LatLng(39.4077852, -0.3615113);
-  var museoartesyciencias = new google.maps.Marker({
-    position: valencia,
-    map: map,
-    icon: image
-  });
-
-  google.maps.event.addListener(museoartesyciencias, 'click', function() {
-    $(".monumento").hide(500);
-    $("#museoartesciencias").show(500);
-  });
 
   image = 'static/iconos/barcelona.png';
   var barcelona = new google.maps.LatLng(41.39479,2.1487679);
